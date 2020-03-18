@@ -1,0 +1,105 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+}
+html {
+  height: 100%;
+  font-size: 16px;
+}
+body {
+  height: 100%;
+  font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+}
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#app header {
+  text-align: center;
+  background-color: #545c64;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 3rem;
+}
+#app footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #888;
+  color: white;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+#app section::after {
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: ".";
+  clear: both;
+}
+#app section {
+  display: flex;
+  position: absolute;
+  top: 3rem;
+  bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+#app section aside {
+  flex-basis: 16%;
+  background-color: #545c64;
+}
+#app aside a {
+  display: block;
+  padding: 0.7rem 0;
+}
+#app aside a:link {
+  color: white;
+  text-decoration: none;
+}
+#app aside a:visited {
+  color: white;
+  text-decoration: none;
+}
+#app li {
+  background-color: #888;
+  border-bottom: white solid 1px;
+}
+
+#app section article {
+  float: right;
+}
+.main {
+  display: flex;
+  flex-basis: 84%;
+  justify-content: center;
+}
+
+#userManageContainer {
+  margin-top: 50px;
+  width: 100%;
+}
+
+#userManageContainer > p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#userManageContainer table {
+  width: 100%;
+  padding: 0 20px;
+}
+
+#userManageContainer th {
+  background-color: #eee;
+}
+#userManageContainer th,
+#userManageContainer td {
+  padding: 0.5rem 0;
+}
