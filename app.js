@@ -27,6 +27,27 @@ window.addEventListener("load", function() {
 
   // 用户管理组件
   const Users = {
+    data: function() {
+      return {
+        userList: [
+          {
+            id: 1,
+            name: "Tom",
+            age: 22
+          },
+          {
+            id: 2,
+            name: "Jerry",
+            age: 20
+          },
+          {
+            id: 3,
+            name: "Jack",
+            age: 21
+          }
+        ]
+      };
+    },
     template: `
     <div class="component-item">
     <p>用户管理区域</p>
@@ -38,22 +59,10 @@ window.addEventListener("load", function() {
         <th>操作</th>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Tom</td>
-          <td>22</td>
-          <td><a href="">详情</a></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jerry</td>
-          <td>20</td>
-          <td><a href="">详情</a></td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Jack</td>
-          <td>21</td>
+        <tr v-for="user in userList" :key="user.id">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
           <td><a href="">详情</a></td>
         </tr>
       </tbody>
