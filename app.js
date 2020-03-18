@@ -63,12 +63,37 @@ window.addEventListener("load", function() {
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.age}}</td>
-          <td><a href="">详情</a></td>
+          <td><a href="javascript:;" @click="goUserInfo(user.id)">详情</a></td>
         </tr>
       </tbody>
     </table>
     </div>
-    `
+    `,
+    methods: {
+      goUserInfo: function(id) {
+        // 编程式导航
+        console.log(id);
+        this.$router.push({
+          path: "/userinfo/" + id
+        });
+      }
+    }
+  };
+
+  // 用户详情页
+  const UserInfo = {
+    props: ["id"],
+    template: `
+      <div class="component-item">
+        <p>用户详情页 id:{{id}}</p>
+        <button @click="goBack">后退</button>
+      </div>
+    `,
+    methods: {
+      goBack: function() {
+        this.$router.go(-1);
+      }
+    }
   };
   const Authorization = {
     template: `<div class="component-item"><p>权限管理组件</p></div>`
@@ -93,6 +118,7 @@ window.addEventListener("load", function() {
         // 为子组件添加路由
         children: [
           { path: "/users", component: Users },
+          { path: "/userinfo/:id", component: UserInfo, props: true },
           { path: "/authorization", component: Authorization },
           { path: "/goods", component: Goods },
           { path: "/orders", component: Orders },
