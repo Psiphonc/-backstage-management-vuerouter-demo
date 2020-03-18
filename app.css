@@ -19,6 +19,10 @@ body {
   flex-direction: column;
 }
 #app header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   text-align: center;
   background-color: #545c64;
   color: white;
@@ -35,13 +39,7 @@ body {
   font-size: 1rem;
   line-height: 2rem;
 }
-#app section::after {
-  display: block;
-  height: 0;
-  visibility: hidden;
-  content: ".";
-  clear: both;
-}
+
 #app section {
   display: flex;
   position: absolute;
@@ -80,26 +78,30 @@ body {
   justify-content: center;
 }
 
-#userManageContainer {
+.component-item {
   margin-top: 50px;
   width: 100%;
 }
 
-#userManageContainer > p {
+.component-item > p {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-#userManageContainer table {
+.component-item table {
   width: 100%;
   padding: 0 20px;
 }
 
-#userManageContainer th {
+.component-item th {
   background-color: #eee;
 }
-#userManageContainer th,
-#userManageContainer td {
+.component-item th,
+.component-item td {
   padding: 0.5rem 0;
+}
+
+.container {
+  height: 100%;
 }
